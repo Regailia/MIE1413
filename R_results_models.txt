@@ -1,0 +1,738 @@
+> iran_model_1 <- lm(OVR_SCORE ~ ACDG09 + ACDG11R + ACDGDAS + ACDGRRS + ACDGEAS, data = iran_logit)
+> iran_model_2 <- lm(OVR_SCORE ~ ACDG09 + ACDG11R + ACDGRRS + ACDGEAS + ACDGDAS + ACDG11R*ACDG09, data = iran_logit)
+> iran_model_3 <- lm(OVR_SCORE ~ ACDG09 + ACDG11R + ACDGRRS + ACDGEAS + ACDGDAS + ACDGEAS*ACDG09, data = iran_logit)
+> iran_model_4 <- lm(OVR_SCORE ~ ACDG09 + ACDGRRS + ACDGEAS + ACDGDAS, data = iran_logit)
+> iran_model_5 <- lm(OVR_SCORE ~ ACDG09 + ACDGRRS + ACDGEAS + ACDGDAS + ACDGEAS*ACDGDAS, data = iran_logit)
+> iran_model_6 <- lm(OVR_SCORE ~ ACDG09 + ACDGRRS + ACDGDAS, data = iran_logit)
+> summary(iran_model_1)
+
+Call:
+lm(formula = OVR_SCORE ~ ACDG09 + ACDG11R + ACDGDAS + ACDGRRS + 
+    ACDGEAS, data = iran_logit)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-206.185  -23.329    5.959   33.063  108.562 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  504.164     49.111  10.266  < 2e-16 ***
+ACDG092      -21.536     28.300  -0.761  0.44741    
+ACDG093      -68.286     28.299  -2.413  0.01656 *  
+ACDG094      -82.806     29.027  -2.853  0.00471 ** 
+ACDG11R2      43.460     43.366   1.002  0.31726    
+ACDG11R3      45.784     39.431   1.161  0.24673    
+ACDG11R4      32.841     39.620   0.829  0.40797    
+ACDGDAS2     -20.005      8.337  -2.399  0.01717 *  
+ACDGDAS3     -34.921     13.311  -2.623  0.00926 ** 
+ACDGRRS2     -30.911     13.540  -2.283  0.02330 *  
+ACDGRRS3     -45.044     15.675  -2.874  0.00442 ** 
+ACDGEAS2      -7.043     11.461  -0.615  0.53945    
+ACDGEAS3     -20.928     12.633  -1.657  0.09888 .  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 54.36 on 243 degrees of freedom
+Multiple R-squared:  0.3138,	Adjusted R-squared:  0.2799 
+F-statistic: 9.262 on 12 and 243 DF,  p-value: 1.112e-14
+
+> summary(iran_model_2)
+
+Call:
+lm(formula = OVR_SCORE ~ ACDG09 + ACDG11R + ACDGRRS + ACDGEAS + 
+    ACDGDAS + ACDG11R * ACDG09, data = iran_logit)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-208.916  -24.377    3.518   32.769  107.024 
+
+Coefficients: (4 not defined because of singularities)
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)       516.402     54.218   9.525  < 2e-16 ***
+ACDG092           -31.903     36.792  -0.867  0.38675    
+ACDG093           -76.943     36.640  -2.100  0.03678 *  
+ACDG094           -88.579     34.554  -2.564  0.01098 *  
+ACDG11R2           41.378     76.691   0.540  0.59002    
+ACDG11R3           32.166     43.129   0.746  0.45652    
+ACDG11R4           31.233     40.150   0.778  0.43740    
+ACDGRRS2          -31.591     13.691  -2.307  0.02189 *  
+ACDGRRS3          -45.582     15.896  -2.868  0.00451 ** 
+ACDGEAS2           -8.230     11.594  -0.710  0.47849    
+ACDGEAS3          -23.307     12.803  -1.820  0.06994 .  
+ACDGDAS2          -20.416      8.493  -2.404  0.01699 *  
+ACDGDAS3          -35.559     13.422  -2.649  0.00860 ** 
+ACDG092:ACDG11R2   13.186     73.382   0.180  0.85755    
+ACDG093:ACDG11R2  -26.789     71.523  -0.375  0.70833    
+ACDG094:ACDG11R2   66.116     84.825   0.779  0.43650    
+ACDG092:ACDG11R3   14.459     20.148   0.718  0.47368    
+ACDG093:ACDG11R3   14.635     19.671   0.744  0.45762    
+ACDG094:ACDG11R3       NA         NA      NA       NA    
+ACDG092:ACDG11R4       NA         NA      NA       NA    
+ACDG093:ACDG11R4       NA         NA      NA       NA    
+ACDG094:ACDG11R4       NA         NA      NA       NA    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 54.54 on 238 degrees of freedom
+Multiple R-squared:  0.3235,	Adjusted R-squared:  0.2752 
+F-statistic: 6.696 on 17 and 238 DF,  p-value: 5.199e-13
+
+> summary(iran_model_3)
+
+Call:
+lm(formula = OVR_SCORE ~ ACDG09 + ACDG11R + ACDGRRS + ACDGEAS + 
+    ACDGDAS + ACDGEAS * ACDG09, data = iran_logit)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-204.179  -24.346    4.903   32.362  112.150 
+
+Coefficients: (1 not defined because of singularities)
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)       493.8006    67.1460   7.354 3.08e-12 ***
+ACDG092           -19.4041    57.4934  -0.338   0.7360    
+ACDG093           -39.0600    57.5427  -0.679   0.4979    
+ACDG094          -128.9717    62.1845  -2.074   0.0392 *  
+ACDG11R2           44.1816    43.9342   1.006   0.3156    
+ACDG11R3           48.2918    39.7290   1.216   0.2254    
+ACDG11R4           33.4085    39.9762   0.836   0.4042    
+ACDGRRS2          -27.8575    13.8516  -2.011   0.0454 *  
+ACDGRRS3          -40.6301    15.9431  -2.548   0.0115 *  
+ACDGEAS2            0.2599    64.4662   0.004   0.9968    
+ACDGEAS3           27.5062    30.9004   0.890   0.3743    
+ACDGDAS2          -17.8631     8.3789  -2.132   0.0340 *  
+ACDGDAS3          -31.9816    13.3328  -2.399   0.0172 *  
+ACDG092:ACDGEAS2   -6.4469    66.3409  -0.097   0.9227    
+ACDG093:ACDGEAS2  -33.7326    66.4898  -0.507   0.6124    
+ACDG094:ACDGEAS2   51.3644    70.6380   0.727   0.4678    
+ACDG092:ACDGEAS3  -38.0769    36.1001  -1.055   0.2926    
+ACDG093:ACDGEAS3  -76.4459    36.1597  -2.114   0.0355 *  
+ACDG094:ACDGEAS3        NA         NA      NA       NA    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 54.13 on 238 degrees of freedom
+Multiple R-squared:  0.3336,	Adjusted R-squared:  0.286 
+F-statistic:  7.01 on 17 and 238 DF,  p-value: 1.087e-13
+
+> summary(iran_model_4)
+
+Call:
+lm(formula = OVR_SCORE ~ ACDG09 + ACDGRRS + ACDGEAS + ACDGDAS, 
+    data = iran_logit)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-200.688  -24.158    4.967   35.210  114.481 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  550.286     29.922  18.391  < 2e-16 ***
+ACDG092      -26.990     28.007  -0.964  0.33616    
+ACDG093      -72.867     28.030  -2.600  0.00990 ** 
+ACDG094      -90.225     28.568  -3.158  0.00179 ** 
+ACDGRRS2     -31.780     13.564  -2.343  0.01993 *  
+ACDGRRS3     -46.096     15.709  -2.934  0.00366 ** 
+ACDGEAS2      -7.428     11.369  -0.653  0.51414    
+ACDGEAS3     -21.735     12.624  -1.722  0.08639 .  
+ACDGDAS2     -19.916      8.346  -2.386  0.01777 *  
+ACDGDAS3     -36.215     13.305  -2.722  0.00695 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 54.52 on 246 degrees of freedom
+Multiple R-squared:  0.3014,	Adjusted R-squared:  0.2759 
+F-statistic: 11.79 on 9 and 246 DF,  p-value: 2.094e-15
+
+> summary(iran_model_5)
+
+Call:
+lm(formula = OVR_SCORE ~ ACDG09 + ACDGRRS + ACDGEAS + ACDGDAS + 
+    ACDGEAS * ACDGDAS, data = iran_logit)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-196.551  -23.475    2.971   36.088  118.483 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         550.77      29.97  18.379  < 2e-16 ***
+ACDG092             -25.03      27.86  -0.898  0.36983    
+ACDG093             -70.53      27.88  -2.530  0.01205 *  
+ACDG094             -86.57      28.44  -3.044  0.00259 ** 
+ACDGRRS2            -30.51      13.65  -2.235  0.02634 *  
+ACDGRRS3            -44.57      15.68  -2.843  0.00485 ** 
+ACDGEAS2            -15.65      12.05  -1.299  0.19520    
+ACDGEAS3            -18.09      13.87  -1.305  0.19324    
+ACDGDAS2            -71.90      55.48  -1.296  0.19622    
+ACDGDAS3            -65.29      40.38  -1.617  0.10723    
+ACDGEAS2:ACDGDAS2    70.93      56.64   1.252  0.21165    
+ACDGEAS3:ACDGDAS2    32.24      57.00   0.566  0.57215    
+ACDGEAS2:ACDGDAS3    29.74      44.42   0.670  0.50379    
+ACDGEAS3:ACDGDAS3    32.43      45.86   0.707  0.48012    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 54.18 on 242 degrees of freedom
+Multiple R-squared:  0.3212,	Adjusted R-squared:  0.2848 
+F-statistic: 8.809 on 13 and 242 DF,  p-value: 1.068e-14
+
+> summary(iran_model_6)
+
+Call:
+lm(formula = OVR_SCORE ~ ACDG09 + ACDGRRS + ACDGDAS, data = iran_logit)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-205.939  -22.700    4.695   35.427  112.706 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  550.106     29.224  18.824  < 2e-16 ***
+ACDG092      -30.197     28.089  -1.075 0.283410    
+ACDG093      -78.329     28.029  -2.795 0.005603 ** 
+ACDG094      -94.142     28.627  -3.289 0.001153 ** 
+ACDGRRS2     -37.353     13.287  -2.811 0.005331 ** 
+ACDGRRS3     -52.906     15.410  -3.433 0.000699 ***
+ACDGDAS2     -24.762      8.028  -3.084 0.002271 ** 
+ACDGDAS3     -38.113     13.332  -2.859 0.004616 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 54.76 on 248 degrees of freedom
+Multiple R-squared:  0.2894,	Adjusted R-squared:  0.2693 
+F-statistic: 14.43 on 7 and 248 DF,  p-value: 1.013e-15
+
+> vif(iran_model_1)
+            GVIF Df GVIF^(1/(2*Df))
+ACDG09  1.180036  3        1.027975
+ACDG11R 1.135123  3        1.021348
+ACDGDAS 1.146019  2        1.034661
+ACDGRRS 1.106606  2        1.025648
+ACDGEAS 1.235727  2        1.054340
+> 1/vif(iran_model_1)
+             GVIF        Df GVIF^(1/(2*Df))
+ACDG09  0.8474319 0.3333333       0.9727864
+ACDG11R 0.8809618 0.3333333       0.9790980
+ACDGDAS 0.8725862 0.5000000       0.9665005
+ACDGRRS 0.9036638 0.5000000       0.9749935
+ACDGEAS 0.8092401 0.5000000       0.9484607
+> mean(vif(iran_model_1))
+[1] 1.531165
+> #logistic regression
+> iran_logit_a <- glm(formula = CLASS ~ ACDG09 + ACDG11R + ACDGDAS + ACDGRRS + ACDGEAS, data = iran_logit, family = "binomial")
+> summary(iran_logit_a)
+
+Call:
+glm(formula = CLASS ~ ACDG09 + ACDG11R + ACDGDAS + ACDGRRS + 
+    ACDGEAS, family = "binomial", data = iran_logit)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.9349  -0.5458  -0.2625  -0.1234   2.6021  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)   3.7575     2.0709   1.814  0.06962 . 
+ACDG092      -1.5631     1.3268  -1.178  0.23876   
+ACDG093      -3.1421     1.3543  -2.320  0.02034 * 
+ACDG094      -3.0857     1.4414  -2.141  0.03229 * 
+ACDG11R2     -0.8588     1.7734  -0.484  0.62818   
+ACDG11R3     -0.4894     1.4869  -0.329  0.74204   
+ACDG11R4     -2.1318     1.5374  -1.387  0.16556   
+ACDGDAS2     -1.3544     0.6149  -2.203  0.02762 * 
+ACDGDAS3     -1.5229     1.2617  -1.207  0.22744   
+ACDGRRS2     -1.9694     0.6247  -3.152  0.00162 **
+ACDGRRS3     -2.3979     0.8282  -2.895  0.00379 **
+ACDGEAS2      0.0783     0.5785   0.135  0.89234   
+ACDGEAS3     -0.4500     0.6979  -0.645  0.51909   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 218.50  on 255  degrees of freedom
+Residual deviance: 160.43  on 243  degrees of freedom
+AIC: 186.43
+
+Number of Fisher Scoring iterations: 6
+
+> confint(iran_logit_a)
+Waiting for profiling to be done...
+                 2.5 %     97.5 %
+(Intercept) -0.3788969  8.1989896
+ACDG092     -4.7712040  0.8702993
+ACDG093     -6.3881933 -0.6646486
+ACDG094     -6.4594217 -0.4449310
+ACDG11R2    -4.6729767  2.8493830
+ACDG11R3    -3.8168908  2.8380527
+ACDG11R4    -5.5326430  1.2625178
+ACDGDAS2    -2.6813428 -0.2349470
+ACDGDAS3    -4.7157430  0.5367353
+ACDGRRS2    -3.2280186 -0.7522177
+ACDGRRS3    -4.1184399 -0.8339999
+ACDGEAS2    -1.0214191  1.2694071
+ACDGEAS3    -1.8375723  0.9357347
+> exp(coef(iran_logit_a))
+(Intercept)     ACDG092     ACDG093     ACDG094    ACDG11R2    ACDG11R3    ACDG11R4    ACDGDAS2    ACDGDAS3    ACDGRRS2 
+42.83945584  0.20948507  0.04319281  0.04569743  0.42365208  0.61297863  0.11862001  0.25810608  0.21808886  0.13954401 
+   ACDGRRS3    ACDGEAS2    ACDGEAS3 
+ 0.09090533  1.08144694  0.63765179 
+> exp(cbind(OR = coef(iran_logit_a), confint(iran_logit_a))) #odds ratios and confidence intervals
+Waiting for profiling to be done...
+                     OR       2.5 %       97.5 %
+(Intercept) 42.83945584 0.684616162 3637.2733214
+ACDG092      0.20948507 0.008470176    2.3876253
+ACDG093      0.04319281 0.001681291    0.5144543
+ACDG094      0.04569743 0.001565701    0.6408685
+ACDG11R2     0.42365208 0.009344412   17.2771181
+ACDG11R3     0.61297863 0.021996085   17.0824692
+ACDG11R4     0.11862001 0.003955521    3.5343090
+ACDGDAS2     0.25810608 0.068471148    0.7906127
+ACDGDAS3     0.21808886 0.008953211    1.7104137
+ACDGRRS2     0.13954401 0.039635958    0.4713201
+ACDGRRS3     0.09090533 0.016269877    0.4343086
+ACDGEAS2     1.08144694 0.360083586    3.5587419
+ACDGEAS3     0.63765179 0.159203452    2.5490856
+> with(iran_logit_a, null.deviance - deviance)
+[1] 58.06753
+> with(iran_logit_a, df.null-df.residual)
+[1] 12
+> with(iran_logit_a, pchisq(null.deviance-deviance, df.null-df.residual, lower.tail=FALSE))
+[1] 5.067494e-08
+> logLik(iran_logit_a) #log liklihoods
+'log Lik.' -80.21503 (df=13)
+> PseudoR2(iran_logit_a,which = "McFaddenAdj") #pseudo R2
+McFaddenAdj 
+  0.1467638 
+> logitgof(iran_logit$CLASS, fitted(iran_logit_a))
+
+	Hosmer and Lemeshow test (binary model)
+
+data:  iran_logit$CLASS, fitted(iran_logit_a)
+X-squared = 4.6032, df = 8, p-value = 0.799
+
+Warning message:
+In logitgof(iran_logit$CLASS, fitted(iran_logit_a)) :
+  At least one cell in the expected frequencies table is < 1. Chi-square approximation may be incorrect.
+> iran_logit_b <- glm(formula = CLASS ~ ACDG09 + ACDGDAS + ACDGRRS, data = iran_logit, family = "binomial")
+> summary(iran_logit_b)
+
+Call:
+glm(formula = CLASS ~ ACDG09 + ACDGDAS + ACDGRRS, family = "binomial", 
+    data = iran_logit)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.6342  -0.4785  -0.3839  -0.2133   2.7813  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)   
+(Intercept)   3.1051     1.3955   2.225  0.02608 * 
+ACDG092      -2.0750     1.2868  -1.613  0.10684   
+ACDG093      -3.6188     1.3203  -2.741  0.00613 **
+ACDG094      -3.8122     1.4030  -2.717  0.00658 **
+ACDGDAS2     -1.2755     0.5646  -2.259  0.02388 * 
+ACDGDAS3     -1.3940     1.1456  -1.217  0.22368   
+ACDGRRS2     -1.8640     0.5800  -3.214  0.00131 **
+ACDGRRS3     -2.3572     0.7743  -3.044  0.00233 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 218.50  on 255  degrees of freedom
+Residual deviance: 174.61  on 248  degrees of freedom
+AIC: 190.61
+
+Number of Fisher Scoring iterations: 6
+
+> confint(iran_logit_b)
+Waiting for profiling to be done...
+                 2.5 %     97.5 %
+(Intercept)  0.5988527  6.4287136
+ACDG092     -5.2404816  0.2693108
+ACDG093     -6.8283922 -1.2142050
+ACDG094     -7.1418684 -1.2589597
+ACDGDAS2    -2.5030322 -0.2532949
+ACDGDAS3    -4.4222196  0.4547648
+ACDGRRS2    -3.0245356 -0.7243151
+ACDGRRS3    -3.9737771 -0.8968147
+> exp(coef(iran_logit_b))
+(Intercept)     ACDG092     ACDG093     ACDG094    ACDGDAS2    ACDGDAS3    ACDGRRS2    ACDGRRS3 
+22.31109062  0.12555826  0.02681539  0.02209943  0.27927985  0.24807902  0.15505279  0.09468866 
+> exp(cbind(OR = coef(iran_logit_b), confint(iran_logit_b))) #odds ratios and confidence intervals
+Waiting for profiling to be done...
+                     OR        2.5 %      97.5 %
+(Intercept) 22.31109062 1.8200295187 619.3766569
+ACDG092      0.12555826 0.0052977046   1.3090619
+ACDG093      0.02681539 0.0010825973   0.2969460
+ACDG094      0.02209943 0.0007912723   0.2839493
+ACDGDAS2     0.27927985 0.0818364792   0.7762389
+ACDGDAS3     0.24807902 0.0120075510   1.5758027
+ACDGRRS2     0.15505279 0.0485803790   0.4846564
+ACDGRRS3     0.09468866 0.0188022799   0.4078668
+> with(iran_logit_b, null.deviance - deviance)
+[1] 43.88419
+> with(iran_logit_b, df.null-df.residual)
+[1] 7
+> with(iran_logit_b, pchisq(null.deviance-deviance, df.null-df.residual, lower.tail=FALSE))
+[1] 2.250308e-07
+> logLik(iran_logit_b) #log liklihoods
+'log Lik.' -87.3067 (df=8)
+> PseudoR2(iran_logit_b,which = "McFaddenAdj") #pseudo R2
+McFaddenAdj 
+  0.1276178 
+> logitgof(iran_logit$CLASS, fitted(iran_logit_b), g=5)
+
+	Hosmer and Lemeshow test (binary model)
+
+data:  iran_logit$CLASS, fitted(iran_logit_b)
+X-squared = 1.67, df = 3, p-value = 0.6436
+
+> aze_logit$ACDG11R <- factor(aze_logit$ACDG11R)
+> aze_logit$ACDGEAS <- factor(aze_logit$ACDGEAS)
+> aze_logit$ACDGRRS <- factor(aze_logit$ACDGRRS)
+> aze_logit$ACBG20<- factor(aze_logit$ACBG20)
+> aze_logit$CLASS <- factor(aze_logit$CLASS)
+> aze_model_1 <- lm(OVR_SCORE ~ ACDG11R + ACDGRRS + ACDGEAS + ACBG20, data = aze_logit)
+> aze_model_2 <- lm(OVR_SCORE ~ ACDG11R + ACDGRRS + ACDGEAS + ACBG20 + ACDGEAS*ACBG20, data = aze_logit)
+> aze_model_3 <- lm(OVR_SCORE ~ ACDG11R + ACDGRRS + ACBG20, data = aze_logit)
+> summary(aze_model_1)
+
+Call:
+lm(formula = OVR_SCORE ~ ACDG11R + ACDGRRS + ACDGEAS + ACBG20, 
+    data = aze_logit)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-141.905  -31.690    4.084   34.308  142.034 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  420.560     26.965  15.596  < 2e-16 ***
+ACDG11R2       2.430     10.529   0.231 0.817826    
+ACDG11R3      31.585     10.742   2.940 0.003835 ** 
+ACDG11R4     -11.671     14.055  -0.830 0.407697    
+ACDGRRS2      27.204     17.604   1.545 0.124510    
+ACDGRRS3      83.459     23.950   3.485 0.000657 ***
+ACDGEAS2      13.836     20.586   0.672 0.502630    
+ACDGEAS3      -3.469     20.828  -0.167 0.867943    
+ACBG203        9.920      8.492   1.168 0.244716    
+ACBG204       30.013     14.593   2.057 0.041569 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 47.22 on 141 degrees of freedom
+Multiple R-squared:  0.262,	Adjusted R-squared:  0.2149 
+F-statistic: 5.562 on 9 and 141 DF,  p-value: 1.491e-06
+
+> summary(aze_model_2)
+
+Call:
+lm(formula = OVR_SCORE ~ ACDG11R + ACDGRRS + ACDGEAS + ACBG20 + 
+    ACDGEAS * ACBG20, data = aze_logit)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-140.604  -31.539    4.589   35.172  143.334 
+
+Coefficients: (1 not defined because of singularities)
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      414.5152    30.9394  13.398  < 2e-16 ***
+ACDG11R2           3.0767    10.7787   0.285  0.77573    
+ACDG11R3          32.2807    10.9822   2.939  0.00386 ** 
+ACDG11R4         -10.7299    14.3080  -0.750  0.45458    
+ACDGRRS2          28.8147    18.1055   1.591  0.11379    
+ACDGRRS3          85.0378    24.6922   3.444  0.00076 ***
+ACDGEAS2          20.0700    25.5626   0.785  0.43372    
+ACDGEAS3          -0.9826    25.3510  -0.039  0.96914    
+ACBG203           21.7895    42.0393   0.518  0.60507    
+ACBG204           35.7117    20.9932   1.701  0.09117 .  
+ACDGEAS2:ACBG203 -16.0265    43.6104  -0.367  0.71381    
+ACDGEAS3:ACBG203  -8.9902    43.5264  -0.207  0.83667    
+ACDGEAS2:ACBG204 -11.8797    28.7887  -0.413  0.68050    
+ACDGEAS3:ACBG204       NA         NA      NA       NA    
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 47.67 on 138 degrees of freedom
+Multiple R-squared:  0.2639,	Adjusted R-squared:  0.1999 
+F-statistic: 4.123 on 12 and 138 DF,  p-value: 1.679e-05
+
+> summary(aze_model_3)
+
+Call:
+lm(formula = OVR_SCORE ~ ACDG11R + ACDGRRS + ACBG20, data = aze_logit)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-147.965  -31.055    3.326   34.643  135.974 
+
+Coefficients:
+            Estimate Std. Error t value Pr(>|t|)    
+(Intercept)  428.726     18.110  23.674  < 2e-16 ***
+ACDG11R2      -0.482     10.513  -0.046 0.963498    
+ACDG11R3      31.219     10.833   2.882 0.004565 ** 
+ACDG11R4     -14.746     14.111  -1.045 0.297785    
+ACDGRRS2      24.540     17.706   1.386 0.167927    
+ACDGRRS3      86.174     23.637   3.646 0.000373 ***
+ACBG203       10.264      8.552   1.200 0.232056    
+ACBG204       31.481     14.698   2.142 0.033898 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 47.66 on 143 degrees of freedom
+Multiple R-squared:  0.2376,	Adjusted R-squared:  0.2003 
+F-statistic: 6.368 on 7 and 143 DF,  p-value: 1.595e-06
+
+> #first binary model
+> aze_logit_a <- glm(formula = CLASS ~ ACDG11R + ACDGEAS + ACDGRRS + ACBG20, data = aze_logit, family = "binomial")
+> summary(aze_logit_a)
+
+Call:
+glm(formula = CLASS ~ ACDG11R + ACDGEAS + ACDGRRS + ACBG20, family = "binomial", 
+    data = aze_logit)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.5023  -0.8072  -0.6569   1.0260   2.0573  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)
+(Intercept)  -2.3364     1.4841  -1.574    0.115
+ACDG11R2      0.5061     0.5339   0.948    0.343
+ACDG11R3      0.8273     0.5382   1.537    0.124
+ACDG11R4     -0.3988     0.8755  -0.456    0.649
+ACDGEAS2      0.3154     0.9601   0.329    0.743
+ACDGEAS3     -0.4788     0.9889  -0.484    0.628
+ACDGRRS2      0.8855     1.1316   0.782    0.434
+ACDGRRS3      2.0712     1.3522   1.532    0.126
+ACBG203       0.1813     0.4224   0.429    0.668
+ACBG204       0.6753     0.6518   1.036    0.300
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 182.22  on 150  degrees of freedom
+Residual deviance: 165.81  on 141  degrees of freedom
+AIC: 185.81
+
+Number of Fisher Scoring iterations: 4
+
+> confint(aze_logit_a)
+Waiting for profiling to be done...
+                 2.5 %    97.5 %
+(Intercept) -5.7978969 0.3315404
+ACDG11R2    -0.5221881 1.5904977
+ACDG11R3    -0.2025255 1.9273874
+ACDG11R4    -2.4008307 1.1930402
+ACDGEAS2    -1.5005147 2.4481014
+ACDGEAS3    -2.3470015 1.7068302
+ACDGRRS2    -1.0025437 3.8805894
+ACDGRRS3    -0.3292349 5.3315230
+ACBG203     -0.6616828 1.0037656
+ACBG204     -0.6348942 1.9585898
+> exp(coef(aze_logit_a))
+(Intercept)    ACDG11R2    ACDG11R3    ACDG11R4    ACDGEAS2    ACDGEAS3    ACDGRRS2    ACDGRRS3     ACBG203     ACBG204 
+  0.0966703   1.6587462   2.2871967   0.6711310   1.3708121   0.6195482   2.4241644   7.9342226   1.1987713   1.9645485 
+> exp(cbind(OR = coef(aze_logit_a), confint(aze_logit_a))) #odds ratios and confidence intervals
+Waiting for profiling to be done...
+                   OR       2.5 %     97.5 %
+(Intercept) 0.0966703 0.003033929   1.393112
+ACDG11R2    1.6587462 0.593221113   4.906190
+ACDG11R3    2.2871967 0.816665648   6.871534
+ACDG11R4    0.6711310 0.090642630   3.297090
+ACDGEAS2    1.3708121 0.223015351  11.566366
+ACDGEAS3    0.6195482 0.095655559   5.511463
+ACDGRRS2    2.4241644 0.366944871  48.452764
+ACDGRRS3    7.9342226 0.719474007 206.752626
+ACBG203     1.1987713 0.515982327   2.728537
+ACBG204     1.9645485 0.529991580   7.089323
+> with(aze_logit_a, null.deviance - deviance)
+[1] 16.41236
+> with(aze_logit_a, df.null-df.residual)
+[1] 9
+> with(aze_logit_a, pchisq(null.deviance-deviance, df.null-df.residual, lower.tail=FALSE))
+[1] 0.05875397
+> logLik(aze_logit_a) #log liklihoods
+'log Lik.' -82.90604 (df=10)
+> PseudoR2(aze_logit_a,which = "McFaddenAdj") #pseudo R2
+McFaddenAdj 
+-0.01968801 
+> logitgof(aze_logit$CLASS, fitted(aze_logit_a))
+
+	Hosmer and Lemeshow test (binary model)
+
+data:  aze_logit$CLASS, fitted(aze_logit_a)
+X-squared = 2.3789, df = 8, p-value = 0.9671
+
+> aze_logit_b <- glm(formula = CLASS ~ ACDG11R + ACDGEAS + ACDGRRS + ACBG20 + ACDGEAS*ACBG20, data = aze_logit, family = "binomial")
+> summary(aze_logit_b)
+
+Call:
+glm(formula = CLASS ~ ACDG11R + ACDGEAS + ACDGRRS + ACBG20 + 
+    ACDGEAS * ACBG20, family = "binomial", data = aze_logit)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.4929  -0.8042  -0.6236   1.1091   2.1246  
+
+Coefficients: (1 not defined because of singularities)
+                 Estimate Std. Error z value Pr(>|z|)
+(Intercept)       -2.5798     1.7025  -1.515    0.130
+ACDG11R2           0.5062     0.5444   0.930    0.353
+ACDG11R3           0.8559     0.5479   1.562    0.118
+ACDG11R4          -0.3609     0.8845  -0.408    0.683
+ACDGEAS2           0.5851     1.2615   0.464    0.643
+ACDGEAS3          -0.4225     1.2838  -0.329    0.742
+ACDGRRS2           0.9572     1.1483   0.834    0.404
+ACDGRRS3           2.1144     1.3740   1.539    0.124
+ACBG203            0.6161     1.8741   0.329    0.742
+ACBG204            1.3641     0.9261   1.473    0.141
+ACDGEAS2:ACBG203  -0.5252     1.9482  -0.270    0.787
+ACDGEAS3:ACBG203  -0.3897     1.9789  -0.197    0.844
+ACDGEAS2:ACBG204  -1.3075     1.2649  -1.034    0.301
+ACDGEAS3:ACBG204       NA         NA      NA       NA
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 182.22  on 150  degrees of freedom
+Residual deviance: 164.66  on 138  degrees of freedom
+AIC: 190.66
+
+Number of Fisher Scoring iterations: 4
+
+> confint(aze_logit_b)
+Waiting for profiling to be done...
+                      2.5 %    97.5 %
+(Intercept)      -6.5308612 0.4690843
+ACDG11R2         -0.5424877 1.6118159
+ACDG11R3         -0.1905380 1.9777727
+ACDG11R4         -2.3749011 1.2536385
+ACDGEAS2         -1.7043844 3.7185472
+ACDGEAS3         -2.7570648 2.7417559
+ACDGRRS2         -0.9695927 3.9709438
+ACDGRRS3         -0.3343077 5.4033109
+ACBG203          -3.2315610 4.7219011
+ACBG204          -0.5034996 3.2539680
+ACDGEAS2:ACBG203 -4.7439852 3.4441630
+ACDGEAS3:ACBG203 -4.6588225 3.6276965
+ACDGEAS2:ACBG204 -3.8582223 1.1838132
+ACDGEAS3:ACBG204         NA        NA
+> exp(coef(aze_logit_b))
+     (Intercept)         ACDG11R2         ACDG11R3         ACDG11R4         ACDGEAS2         ACDGEAS3         ACDGRRS2 
+      0.07578865       1.65891367       2.35344012       0.69708072       1.79508932       0.65540897       2.60442721 
+        ACDGRRS3          ACBG203          ACBG204 ACDGEAS2:ACBG203 ACDGEAS3:ACBG203 ACDGEAS2:ACBG204 ACDGEAS3:ACBG204 
+      8.28448835       1.85163451       3.91207999       0.59144561       0.67729132       0.27049265               NA 
+> exp(cbind(OR = coef(aze_logit_b), confint(aze_logit_b))) #odds ratios and confidence intervals
+Waiting for profiling to be done...
+                         OR       2.5 %     97.5 %
+(Intercept)      0.07578865 0.001457750   1.598530
+ACDG11R2         1.65891367 0.581300380   5.011904
+ACDG11R3         2.35344012 0.826514376   7.226629
+ACDG11R4         0.69708072 0.093023690   3.503066
+ACDGEAS2         1.79508932 0.181884326  41.204488
+ACDGEAS3         0.65540897 0.063477818  15.514202
+ACDGRRS2         2.60442721 0.379237465  53.034560
+ACDGRRS3         8.28448835 0.715833461 222.140675
+ACBG203          1.85163451 0.039495797 112.381702
+ACBG204          3.91207999 0.604411772  25.892880
+ACDGEAS2:ACBG203 0.59144561 0.008703890  31.317061
+ACDGEAS3:ACBG203 0.67729132 0.009477616  37.626046
+ACDGEAS2:ACBG204 0.27049265 0.021105486   3.266807
+ACDGEAS3:ACBG204         NA          NA         NA
+> with(aze_logit_b, null.deviance - deviance)
+[1] 17.5678
+> with(aze_logit_b, df.null-df.residual)
+[1] 12
+> with(aze_logit_b, pchisq(null.deviance-deviance, df.null-df.residual, lower.tail=FALSE))
+[1] 0.1294576
+> logLik(aze_logit_b) #log liklihoods
+'log Lik.' -82.32833 (df=13)
+> PseudoR2(aze_logit_b,which = "McFaddenAdj") #pseudo R2
+McFaddenAdj 
+ -0.0462737 
+> logitgof(aze_logit$CLASS, fitted(aze_logit_b))
+
+	Hosmer and Lemeshow test (binary model)
+
+data:  aze_logit$CLASS, fitted(aze_logit_b)
+X-squared = 5.2796, df = 7, p-value = 0.6259
+
+Warning message:
+In logitgof(aze_logit$CLASS, fitted(aze_logit_b)) :
+  Not possible to compute 10 rows. There might be too few observations.
+> aze_logit_c <- glm(formula = CLASS ~ ACDG11R + ACDGRRS + ACBG20, data = aze_logit, family = "binomial")
+> summary(aze_logit_c)
+
+Call:
+glm(formula = CLASS ~ ACDG11R + ACDGRRS + ACBG20, family = "binomial", 
+    data = aze_logit)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.4117  -0.8263  -0.6465   1.1306   2.0684  
+
+Coefficients:
+            Estimate Std. Error z value Pr(>|z|)  
+(Intercept)  -2.2501     1.1357  -1.981   0.0476 *
+ACDG11R2      0.3471     0.5211   0.666   0.5053  
+ACDG11R3      0.7780     0.5283   1.473   0.1408  
+ACDG11R4     -0.5549     0.8650  -0.642   0.5212  
+ACDGRRS2      0.7910     1.1151   0.709   0.4781  
+ACDGRRS3      2.2261     1.3063   1.704   0.0884 .
+ACBG203       0.2126     0.4121   0.516   0.6059  
+ACBG204       0.7156     0.6386   1.121   0.2625  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 182.22  on 150  degrees of freedom
+Residual deviance: 169.77  on 143  degrees of freedom
+AIC: 185.77
+
+Number of Fisher Scoring iterations: 4
+
+> confint(aze_logit_c)
+Waiting for profiling to be done...
+                  2.5 %     97.5 %
+(Intercept) -5.25203702 -0.3603818
+ACDG11R2    -0.65806914  1.4053695
+ACDG11R3    -0.23341761  1.8574520
+ACDG11R4    -2.54343622  1.0100737
+ACDGRRS2    -1.06339907  3.7667333
+ACDGRRS3    -0.07903097  5.4263342
+ACBG203     -0.60853202  1.0160333
+ACBG204     -0.56802656  1.9741676
+> exp(coef(aze_logit_c))
+(Intercept)    ACDG11R2    ACDG11R3    ACDG11R4    ACDGRRS2    ACDGRRS3     ACBG203     ACBG204 
+  0.1053925   1.4149899   2.1771103   0.5741333   2.2055856   9.2633138   1.2369231   2.0453795 
+> exp(cbind(OR = coef(aze_logit_c), confint(aze_logit_c))) #odds ratios and confidence intervals
+Waiting for profiling to be done...
+                   OR      2.5 %     97.5 %
+(Intercept) 0.1053925 0.00523684   0.697410
+ACDG11R2    1.4149899 0.51785027   4.077033
+ACDG11R3    2.1771103 0.79182283   6.407390
+ACDG11R4    0.5741333 0.07859586   2.745803
+ACDGRRS2    2.2055856 0.34528018  43.238588
+ACDGRRS3    9.2633138 0.92401131 227.314435
+ACBG203     1.2369231 0.54414908   2.762216
+ACBG204     2.0453795 0.56664257   7.200623
+> with(aze_logit_c, null.deviance - deviance)
+[1] 12.45194
+> with(aze_logit_c, df.null-df.residual)
+[1] 7
+> with(aze_logit_c, pchisq(null.deviance-deviance, df.null-df.residual, lower.tail=FALSE))
+[1] 0.08664237
+> logLik(aze_logit_c) #log liklihoods
+'log Lik.' -84.88626 (df=8)
+> PseudoR2(aze_logit_c,which = "McFaddenAdj") #pseudo R2
+McFaddenAdj 
+-0.01947084 
+> logitgof(aze_logit$CLASS, fitted(aze_logit_c))
+
+	Hosmer and Lemeshow test (binary model)
+
+data:  aze_logit$CLASS, fitted(aze_logit_c)
+X-squared = 2.1332, df = 7, p-value = 0.9521
